@@ -29,7 +29,7 @@ int main(int argc, char ** argv)
     fseek(f, 0, SEEK_END);
     int size = ftell(f);
     fseek(f,0,SEEK_SET);
-    data = malloc(size);
+    data = calloc(size + 1, 1);
     fread(data, 1, size, f );
     InkViewMain(h_main);
 
